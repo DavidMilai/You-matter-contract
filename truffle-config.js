@@ -1,4 +1,7 @@
 const {TruffleProvider } = require('@harmony-js/core' )
+
+
+
 module, exports = {
 
 networks: {
@@ -16,5 +19,11 @@ networks: {
         return truffleProvider;
       }
     }
+  },
+  compilers: {
+    solc: {
+      version: "^0.8.0"
+    }
   }
 };
+
