@@ -1,7 +1,11 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.8.0;
-pragma abicoder v2;
+// pragma solidity ^0.8.0;
+pragma solidity >=0.4.25 <0.7.0;
+
+// pragma abicoder v2;
+pragma experimental ABIEncoderV2;
+
 
 
 contract YouMatterDao {
@@ -27,7 +31,7 @@ contract YouMatterDao {
     
     State public state;
 
-    constructor(string[] memory candidateNames, address payable[] memory _candidatesAddress) {
+    constructor(string[] memory candidateNames, address payable[] memory _candidatesAddress) public {
         chairperson = msg.sender;
         voters[chairperson].weight = 1;
         state = State.Created;
